@@ -8,27 +8,20 @@ int main()
    do{
       cout << "Enter your N, M(0 < N < 10,  1 <= M <= 10): ";
       cin >> N >> M;
-      if ( !(0 < N < 10) || !(1 <= M <= 10))
+      if ( !(0 < N && N < 10) || !(1 <= M && M <= 10))
       cout << "Error, Please try again\n";
-   }while (!(0 < N < 10) || !(1 <= M <= 10));
+   }while (!(0 < N && N < 10) || !(1 <= M && M <= 10));
    
-   int nthPower = 1;
+   int nthPowerResult = 1;
 	
+	cout <<  N << " to Power " << M << " is " << endl;
 	
-	if (N >= 0){
-		for(int i = 0; i < N; ++i)
+		for(int i = 0; i <= M; ++i)
 		{
-		nthPower *= M;
+		cout << nthPowerResult << " ";
+		nthPowerResult *= N;
 		}
-	}
-	else{
-		for(int i=0; i > N; --i){
-		nthPower /= M;
-		}
-	}
-								
-	
-	cout << "M to Power " << N << " is " << nthPower << endl;
 
-  
+		cout << endl;
+		return 0;
 }
